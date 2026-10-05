@@ -6,7 +6,7 @@ import ProductCard from "../Components/ProductCard";
 import { products, categories } from "../data/products";
 
 export default function Home() {
-  const featuredProducts = products.slice(0, 4);
+  const featuredProducts = products;
 
   return (
     <main className="home-page">
@@ -72,11 +72,6 @@ export default function Home() {
           ))}
         </div>
 
-        <div className="slider-dots">
-          <span className="active" />
-          <span />
-          <span />
-        </div>
       </section>
 
       {/* ================= SIGNATURE COLLECTION ================= */}
@@ -176,11 +171,11 @@ export default function Home() {
               />
             </svg>
           </div>
-          <h3>SECURE PAYMENT</h3>
+          <h3>PAYMENT OPTIONS</h3>
           <p>
-            100% secure payment
+            Choose how you
             <br />
-            guaranteed.
+            want to pay.
           </p>
         </div>
 

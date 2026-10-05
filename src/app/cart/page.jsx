@@ -10,6 +10,7 @@ export default function CartPage() {
     useCart();
   const { isAuthenticated } = useAuth();
   const [checkoutMessage, setCheckoutMessage] = useState("");
+  const [paymentMethod, setPaymentMethod] = useState("cash");
 
   const shippingCost = totalPrice > 150 ? 0 : 12.99;
   const finalTotal = totalPrice + shippingCost;
@@ -19,7 +20,8 @@ export default function CartPage() {
       setCheckoutMessage("Please login to continue with checkout.");
       return;
     }
-    setCheckoutMessage("Order placed successfully! Thank you for shopping with Veyron.");
+    const paymentLabel = paymentMethod === "cash" ? "cash on delivery" : "card (not charged)";
+    setCheckoutMessage(`Demo checkout complete with ${paymentLabel}. No payment was processed.`);
     setTimeout(() => {
       clearCart();
       setCheckoutMessage("");
@@ -140,6 +142,30 @@ export default function CartPage() {
             Add ${(150 - totalPrice).toFixed(2)} more for free shipping
           </p>
         )}
+        <fieldset className="payment-options">
+          <legend>Payment method</legend>
+          <label className="payment-option">
+            <input
+              type="radio"
+              name="payment-method"
+              value="cash"
+              checked={paymentMethod === "cash"}
+              onChange={() => setPaymentMethod("cash")}
+            />
+            <span>Cash on delivery</span>
+          </label>
+          <label className="payment-option">
+            <input
+              type="radio"
+              name="payment-method"
+              value="card"
+              checked={paymentMethod === "card"}
+              onChange={() => setPaymentMethod("card")}
+            />
+            <span>Credit or debit card</span>
+          </label>
+          <p className="payment-note">Demo checkout only. Card payments are not processed.</p>
+        </fieldset>
         <div className="summary-row total">
           <span>Total</span>
           <span>${finalTotal.toFixed(2)}</span>

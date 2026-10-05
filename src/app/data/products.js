@@ -111,6 +111,34 @@ const products = [
     rating: 4.1,
     inStock: true,
   },
+  {
+    id: 9,
+    name: "Essential Cotton Tee",
+    price: 35.0,
+    priceFormatted: "$35.00",
+    image: "/Assets/behrouz-sasani-6OGml3UomZw-unsplash.jpg",
+    description:
+      "An everyday cotton tee with a comfortable, clean-cut fit. Made from soft, durable jersey for easy layering and repeat wear.",
+    category: "T-SHIRTS",
+    colors: ["Black", "White"],
+    sizes: ["S", "M", "L", "XL"],
+    rating: 4.5,
+    inStock: true,
+  },
+  {
+    id: 10,
+    name: "Merino Crewneck",
+    price: 98.0,
+    priceFormatted: "$98.00",
+    image: "/Assets/caio-coelho-rjsee9nKsYE-unsplash.jpg",
+    description:
+      "A soft merino-blend crewneck with a refined texture and versatile, easy-to-layer weight for cooler days.",
+    category: "JACKETS",
+    colors: ["Navy", "Charcoal"],
+    sizes: ["S", "M", "L", "XL"],
+    rating: 4.6,
+    inStock: true,
+  },
 ];
 
 const categories = [

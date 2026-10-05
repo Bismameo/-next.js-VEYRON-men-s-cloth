@@ -3,16 +3,16 @@
 /* ================= ROOT ================= */
 
 :root {
-  --background: #f7f5f0;
-  --foreground: #222222;
-  --gold: #c9a76b;
-  --gold-dark: #a68553;
-  --cream: #fdfbf7;
-  --beige: #d8cbb8;
-  --dark: #111111;
-  --dark-alt: #1a1a1a;
-  --soft-gray: #6b6b6b;
-  --border-color: #e0d7c7;
+  --background: #f4f5ef;
+  --foreground: #202923;
+  --gold: #c87355;
+  --gold-dark: #31584b;
+  --cream: #fbfcf7;
+  --beige: #d7e2d6;
+  --dark: #17231e;
+  --dark-alt: #24352e;
+  --soft-gray: #65716a;
+  --border-color: #d9e0d7;
 }
 
 @theme inline {
@@ -1975,6 +1975,47 @@ ul {
   font-weight: 700;
 
   color: var(--gold-dark);
+}
+
+.payment-options {
+  display: grid;
+  gap: 0.65rem;
+  margin: 1.25rem 0;
+  padding: 0;
+  border: 0;
+}
+
+.payment-options legend {
+  margin-bottom: 0.65rem;
+  font-size: 0.8rem;
+  font-weight: 700;
+  text-transform: uppercase;
+}
+
+.payment-option {
+  display: flex;
+  align-items: center;
+  gap: 0.65rem;
+  padding: 0.75rem;
+  border: 1px solid var(--border-color);
+  border-radius: 4px;
+  background: var(--cream);
+  cursor: pointer;
+}
+
+.payment-option:has(input:checked) {
+  border-color: var(--gold-dark);
+  background: var(--beige);
+}
+
+.payment-option input {
+  accent-color: var(--gold-dark);
+}
+
+.payment-note {
+  margin: 0;
+  color: var(--soft-gray);
+  font-size: 0.75rem;
 }
 
 .cart-checkout {
